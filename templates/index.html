@@ -1,0 +1,77 @@
+<h1 style="text-align:center"><strong>BLOOD-GROUP DATABASE </strong></h1>
+<h1 style="text-align:center"><strong>OF</strong></h1>
+<h1 style="text-align:center"><strong>BLOOD BANK </strong></h1>
+<h2 style="text-align:center"><strong>BIRATNAGAR,MORANG,NEPAL</strong></h2>
+<hr>
+
+<style>
+    table.GeneratedTable {
+      width: 100%;
+      background-color: #ffffff;
+      border-collapse: collapse;
+      border-width: 2px;
+      border-color: #00ff4c;
+      border-style: solid;
+      color: #000000;
+    }
+    
+    table.GeneratedTable td, table.GeneratedTable th {
+      border-width: 2px;
+      border-color: #1f0adf;
+      border-style: solid;
+      padding: 3px;
+    }
+    
+    table.GeneratedTable thead {
+      background-color: #00ff37;
+    }
+    </style>
+    
+    
+    <table class="GeneratedTable">
+      <a href="/add"><button type="button" class="btn btn-danger">Add New Data</button></a>
+        <hr>
+        <hr>
+        <h2>Donars Details</h2>
+        <hr>
+      <thead>
+        <tr>
+            <th>id</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Contact</th>
+          <th>Maritial Status</th>
+          <th>Bloodgroup</th>
+          <th>AltContact</th>
+          <th>Address</th>
+          <th>Medical History</th>
+          <th>Actions</th>
+        </tr>
+        
+      </thead>
+      <tbody>
+        {%for donars in model %}
+        <tr>
+        <td>{{donars.id}}</td>
+          <td>{{donars.Name}}</td>
+          <td>{{donars.Age}}</td>
+          <td>{{donars.Contact}}</td>
+          <td>{{donars.maritialstatus}}</td>
+          <td>{{donars.bloodgroup}}</td>
+          <td>{{donars.AltContact}}</td>
+          <td>{{donars.Address}}</td>
+          <td>{{donars.permedhis}}</td>
+          <td>
+            <a href="delete/{{donars.id}}"><button type="button" class="btn btn-danger">Delete</button>
+          </a>
+          
+            <a href="update/{{donars.id}}"><button type="button" class="btn btn-danger">Update</button>
+          </a></td>
+        </tr>
+        {% endfor %}
+        
+      </tbody>
+    </table>
+    
+    
+    
